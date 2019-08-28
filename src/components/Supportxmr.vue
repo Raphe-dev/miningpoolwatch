@@ -1,46 +1,37 @@
 <template>
-  <div class="flex-grow-1 p-2" style="width:18rem; max-width:40rem;">
-    <div class="card bg-light" style="min-height:30rem;" v-if="current">
-      <div class="card-header">
-        <h5 class="card-title m-0">Supportxmr</h5>
-        <small> {{address.substring(0,3)}}...{{address.substring(address.length - 3, address.length)}} </small>
-        <small style="position:absolute; top:0.5rem; right:0.5rem;"> 
-          <button class="btn-sm btn btn-outline-dark" style="width:2rem;" @click="removeCard()">X</button> 
-        </small>
+  <div>
+    <div v-if="current">
+      <div class="row">
+        <span class="col text-left">
+          <small > Workers </small>
+        </span>
+        <big class="col">{{data.stats.workers}}</big>
       </div>
-      <div class="card-body">
-        <div class="row">
-          <span class="col text-left">
-            <small > Workers </small>
-          </span>
-          <big class="col">{{data.stats.workers}}</big>
-        </div>
 
-        <div class="row">
-          <span class="col text-left">
-            <small > Current hashrate </small>
-          </span>
-          <big class="col"> {{current}} H/s </big>
-        </div>
-
-        <div class="row">
-          <span class="col text-left">
-            <small > Average hashrate </small>
-          </span>
-          <big class="col"> {{average}} H/s </big>
-        </div>
-
-        <div class="row">
-          <span class="col text-left">
-            <small > Amount due </small>
-          </span>
-          <big class="col"> {{due}} </big>
-        </div>
-        <div class="row m-3">
-        </div>
-        <canvas id="supportxmrChart" width="100" height="50"></canvas>
+      <div class="row">
+        <span class="col text-left">
+          <small > Current hashrate </small>
+        </span>
+        <big class="col"> {{current}} H/s </big>
       </div>
-      <div class="p-2">
+
+      <div class="row">
+        <span class="col text-left">
+          <small > Average hashrate </small>
+        </span>
+        <big class="col"> {{average}} H/s </big>
+      </div>
+
+      <div class="row">
+        <span class="col text-left">
+          <small > Amount due </small>
+        </span>
+        <big class="col"> {{due}} </big>
+      </div>
+      <div class="row" style="margin: 0.9rem">
+      </div>
+      <canvas id="supportxmrChart" width="100" height="50"></canvas>
+      <div class="pt-4">
         <div class="progress position-relative" style="height:2rem;">
           <div 
             class="progress-bar progress-bar-striped text-dark text-center"
@@ -56,16 +47,8 @@
       </div>
     </div>
 
-    <div class="card bg-light" style="height:34rem;" v-else>
-      <div class="card-header">
-        <h5 class="card-title m-0">Supportxmr</h5>
-        <span class="text-danger"> error </span>
-        <span style="position:absolute; top:0.5rem; right:0.5rem;"> 
-          <button class="btn-sm btn btn-outline-dark" style="width:2rem;" @click="removeCard()">X</button> 
-        </span>
-      </div>
-    </div>
-</div>
+    <div v-else class="text-danger"> error </div>
+  </div>
 </template>
 
 <script>

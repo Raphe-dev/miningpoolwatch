@@ -20,8 +20,8 @@
       </form>
 
       <div class="d-flex justify-content-around flex-wrap" v-if="ready">
-        <component v-for="(miner, key) in $store.state.userdata" 
-          :is="miner.pool"
+        <miner-card v-for="(miner, key) in $store.state.userdata" 
+          :component="miner.pool"
           :key="key"
           :arrKey="key" 
           :address="miner.address" 
@@ -34,14 +34,11 @@
 </template>
 
 <script>
-import Ethermine from '@/components/Ethermine.vue'
-import Supportxmr from '@/components/Supportxmr.vue'
-
+import Card from '@/components/Card'
 export default {
   name: 'home',
   components: {
-    Ethermine,
-    Supportxmr
+    'miner-card' : Card,
   },
   data() {
     return {

@@ -39,12 +39,7 @@ export default new Vuex.Store({
     },
 
     removePool(state, i) {
-      let userkey = state.userdata.find(obj => { 
-        return (obj.pool == state.userdata[i].pool && obj.address == state.userdata[i].address); 
-      });
-      userkey = state.userdata.indexOf(userkey)
       state.userdata.splice(i,1)
-      state.userdata.splice(userkey,1)
       localStorage.setItem('userdata', JSON.stringify(state.userdata));
     }
   },

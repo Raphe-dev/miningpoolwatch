@@ -1,14 +1,6 @@
 <template>
-  <div class="flex-grow-1 p-2" style="width:18rem; max-width:40rem;">
-    <div class="card bg-light" style="min-height:30rem;" v-if="stats">
-      <div class="card-header">
-        <h5 class="card-title m-0">Ethermine</h5>
-        <small> {{address.substring(0,3)}}...{{address.substring(address.length - 3, address.length)}} </small>
-        <span style="position:absolute; top:0.5rem; right:0.5rem;"> 
-          <button class="btn-sm btn btn-outline-dark" style="width:2rem;" @click="removeCard()">X</button> 
-        </span>
-      </div>
-    <div class="card-body">
+  <div>
+    <div v-if="stats">
       <div class="row">
         <span class="col text-left">
           <small > Workers </small>
@@ -44,33 +36,24 @@
         <big class="col"> {{due}} </big>
       </div>
       <canvas id="ethermineChart" width="100" height="50" ></canvas>
-    </div>
-    <div class="p-2">
-      <div class="progress position-relative" style="height:2rem;">
-        <div 
-          class="progress-bar progress-bar-striped text-dark text-center"
-          :class="{ 'progress-bar-animated bg-success' : reported.primary > 1 }" 
-          role="progressbar" 
-          :style="{width: this.progress + '%'}"
-          :tooltip="this.progress"
-          > 
-          <span class="justify-content-center d-flex position-absolute w-100">{{this.progress}} %</span>
+      <div class="pt-4">
+        <div class="progress position-relative" style="height:2rem;">
+          <div 
+            class="progress-bar progress-bar-striped text-dark text-center"
+            :class="{ 'progress-bar-animated bg-success' : reported.primary > 1 }" 
+            role="progressbar" 
+            :style="{width: this.progress + '%'}"
+            :tooltip="this.progress"
+            > 
+            <span class="justify-content-center d-flex position-absolute w-100">{{this.progress}} %</span>
+          </div>
         </div>
+        <p class="card-text text-right"><span style="font-size:0.6rem;">{{updatedAt}}</span></p>
       </div>
-      <p class="card-text text-right"><span style="font-size:0.6rem;">{{updatedAt}}</span></p>
     </div>
-  </div>
 
-  <div class="card bg-light" style="height:34rem;" v-else>
-    <div class="card-header">
-      <h5 class="card-title m-0">Ethermine</h5>
-      <span class="text-danger"> error </span>
-      <span style="position:absolute; top:0.5rem; right:0.5rem;"> 
-        <button class="btn-sm btn btn-outline-dark" style="width:2rem;" @click="removeCard()">X</button> 
-      </span>
-    </div>
+    <div v-else class="text-danger"> error </div>
   </div>
-</div>
 </template>
 
 <script>
