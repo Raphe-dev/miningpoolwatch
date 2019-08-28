@@ -2,7 +2,7 @@
   <div class="flex-grow-1 p-2" style="width:18rem; max-width:40rem;">
     <div class="card bg-light" style="min-height:30rem;">
       <div class="card-header">
-        <h5 class="card-title m-0">{{component}}</h5>
+        <h5 class="card-title m-0 text-capitalize">{{component}}</h5>
         <small> {{address.substring(0,3)}}...{{address.substring(address.length - 3, address.length)}} </small>
         <span style="position:absolute; top:0.5rem; right:0.5rem;"> 
           <button class="btn-sm btn" style="width:2rem;" @click="removeCard()">X</button> 

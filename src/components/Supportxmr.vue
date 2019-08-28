@@ -2,28 +2,28 @@
   <div>
     <div v-if="current">
       <div class="row">
-        <span class="col text-left">
+        <span class="col text-left ml-2">
           <small > Workers </small>
         </span>
         <big class="col">{{data.stats.workers}}</big>
       </div>
 
       <div class="row">
-        <span class="col text-left">
+        <span class="col text-left ml-2">
           <small > Current hashrate </small>
         </span>
         <big class="col"> {{current}} H/s </big>
       </div>
 
       <div class="row">
-        <span class="col text-left">
+        <span class="col text-left ml-2">
           <small > Average hashrate </small>
         </span>
         <big class="col"> {{average}} H/s </big>
       </div>
 
       <div class="row">
-        <span class="col text-left">
+        <span class="col text-left ml-2">
           <small > Amount due </small>
         </span>
         <big class="col"> {{due}} </big>

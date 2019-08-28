@@ -2,35 +2,35 @@
   <div>
     <div v-if="stats">
       <div class="row">
-        <span class="col text-left">
+        <span class="col text-left ml-2">
           <small > Workers </small>
         </span>
         <big class="col"> {{stats.currentStatistics.activeWorkers}}</big>
       </div>
 
       <div class="row">
-        <span class="col text-left">
+        <span class="col text-left ml-2">
           <small > Reported hashrate </small>
         </span>
         <big class="col"> {{reported.primary}}<small>{{reported.secondary}}</small> Mh/s </big>
       </div>
 
       <div class="row">
-        <span class="col text-left">
+        <span class="col text-left ml-2">
           <small > Average hashrate </small>
         </span>
         <big class="col"> {{average.primary}}<small>{{average.secondary}}</small> Mh/s </big>
       </div>
 
       <div class="row">
-        <span class="col text-left">
+        <span class="col text-left ml-2">
           <small > Current hashrate </small>
         </span>
         <big class="col"> {{current.primary}}<small>{{current.secondary}}</small> Mh/s </big>
       </div>
 
       <div class="row">
-        <span class="col text-left">
+        <span class="col text-left ml-2">
           <small > Amount due </small>
         </span>
         <big class="col"> {{due}} </big>
