@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <nav class="m-2">
-      <h4>Miner pool watcher</h4>
+      <h4>Mining pool watch</h4>
     </nav>
     <router-view/>
   </div>

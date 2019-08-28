@@ -83,8 +83,9 @@ export default new Vuex.Store({
       
       http.get(address + "/stats").then( response => {
         res.stats = response.data
-        http.get(address + "/chart/hashrate").then( response => {
-          res.chart = response.data
+        http.get(address + "/chart/hashrate/allWorkers").then( response => {
+          res.chart = response.data.global
+          res.stats.workers = Object.keys(response.data).length - 1
           store.commit('setMinerData', {pool: 'supportxmr', address: address, data: res})
         })
       })

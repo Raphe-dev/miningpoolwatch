@@ -1,6 +1,6 @@
 <template>
-  <div class="flex-grow-1 p-2" style="width:18rem; max-width:30rem;">
-    <div class="card bg-light" style="height:34rem;" v-if="stats">
+  <div class="flex-grow-1 p-2" style="width:18rem; max-width:40rem;">
+    <div class="card bg-light" style="min-height:30rem;" v-if="stats">
       <div class="card-header">
         <h5 class="card-title m-0">Ethermine</h5>
         <small> {{address.substring(0,3)}}...{{address.substring(address.length - 3, address.length)}} </small>
@@ -43,7 +43,7 @@
         </span>
         <big class="col"> {{due}} </big>
       </div>
-      <canvas id="ethermineChart" width="100" height="50"></canvas>
+      <canvas id="ethermineChart" width="100" height="50" ></canvas>
     </div>
     <div class="p-2">
       <div class="progress position-relative" style="height:2rem;">

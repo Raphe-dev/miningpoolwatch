@@ -1,6 +1,6 @@
 <template>
-  <div class="flex-grow-1 p-2" style="width:18rem; max-width:30rem;">
-    <div class="card bg-light" style="height:34rem;" v-if="current">
+  <div class="flex-grow-1 p-2" style="width:18rem; max-width:40rem;">
+    <div class="card bg-light" style="min-height:30rem;" v-if="current">
       <div class="card-header">
         <h5 class="card-title m-0">Supportxmr</h5>
         <small> {{address.substring(0,3)}}...{{address.substring(address.length - 3, address.length)}} </small>
@@ -13,7 +13,7 @@
           <span class="col text-left">
             <small > Workers </small>
           </span>
-          <big class="col"> 1</big>
+          <big class="col">{{data.stats.workers}}</big>
         </div>
 
         <div class="row">
