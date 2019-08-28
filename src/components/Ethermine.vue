@@ -112,7 +112,9 @@ export default {
       return this.parseFloatString(value)
     },
     due(){
-      return (this.stats.currentStatistics.unpaid / 1000000000000000000) .toFixed(8) 
+      let len = this.stats.currentStatistics.unpaid.toString().length
+      let divider = len == 16 ? 100000000000000000 : 1000000000000000000
+      return (this.stats.currentStatistics.unpaid / divider).toFixed(8)
     },
     payout(){
       return this.stats.settings.minPayout / 1000000000000000000

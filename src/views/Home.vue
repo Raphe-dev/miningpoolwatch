@@ -19,13 +19,16 @@
         </div>
       </form>
 
-      <div class="p-2 d-flex justify-content-around flex-wrap" v-if="ready">
+      <div class="d-flex justify-content-around flex-wrap" v-if="ready">
         <component v-for="(miner, key) in $store.state.userdata" 
           :is="miner.pool"
           :key="key"
           :arrKey="key" 
           :address="miner.address" 
           :data="miner.data"/>
+      </div>
+      <div v-else class="d-flex justify-content-center">
+        <div class="spinner-border" role="status"/>
       </div>
   </div>
 </template>
