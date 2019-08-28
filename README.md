@@ -1,4 +1,4 @@
-# miners
+# miningpoolwatch
 
 A simple tool to keep track of my crypto mining pools.
 
