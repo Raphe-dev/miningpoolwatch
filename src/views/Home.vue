@@ -27,8 +27,11 @@
           :address="miner.address" 
           :data="miner.data"/>
       </div>
-      <div v-else class="d-flex justify-content-center">
+      <div v-else-if="$store.state.userdata.length > 0" class="d-flex justify-content-center">
         <div class="spinner-border" role="status"/>
+      </div>
+      <div v-else class="d-flex justify-content-center">
+        <span> Add a mining pool </span>
       </div>
   </div>
 </template>

@@ -74,6 +74,7 @@ export default new Vuex.Store({
         baseURL: "https://cors-anywhere.herokuapp.com/https://www.supportxmr.com/api/miner/",
         timeout: 100000,
       });
+      
       let res = {}
       
       http.get(address + "/stats").then( response => {
