@@ -94,7 +94,7 @@ export default {
       let times = []
       let date
       let timestamp
-      for(let i = 0; i < this.data.chart.length; i++){
+      for(let i = this.data.chart.length - 1; i >= 0; i--){
         timestamp = this.data.chart[i].ts
         date = new Date(timestamp)
         times.push(date.toLocaleString())
