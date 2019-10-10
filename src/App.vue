@@ -16,7 +16,7 @@ export default {
     //for demo
     if(this.$store.state.userdata.length == 0) {
       this.$store.state.userdata = [
-        {pool:'ethermine', address:'0xaB17Ad9D52693Ad637aC1d3780241963A4ad999F'},
+        {pool:'ethermine', address:'0xf78951298306d8E79e99F481d9A159B5f0D4BC2C'},
         {pool:'supportxmr', address:'44Tw1jLRvWwV5nH6hzmiMuVigDGA7nunTajRtoeuVGrFfZUU1K6uiF5RJ24NDcderDdMRwdixGwfJi7mzzFdVUdPCfJ5bbr'}
       ]
       this.$store.dispatch('getMinerData')  
